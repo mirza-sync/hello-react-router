@@ -1,8 +1,19 @@
-# React + Vite
+# React remix Router
+> R.I.P Remix, then revive from the ashes as a proud pheonix 🔥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Remix recently [announced](https://remix.run/blog/merging-remix-and-react-router) that they'll "assimilate" with react-router. Users of React Router v7 will get all the good stuff of Remix without importing Remix. For people who decide to migrate to v7, Remix imports `@remix-run/*` will be replaced with `react-router`. Since everyone starts their SPA with react-router, the Remix pattern will become a de-facto standard when creating a React app. Unless Next.js will win the React war and in the future everyone will initialize their react app using the app router. Hopefully this doesn't age well. I'm looking forward for competitiveness in web development that derives innovation..... But nowadays that JS frameworks were being changed almost every week, I take back my words. Maybe not too much innovation. I mean I'm looking forward for "innovation that is stable". Anyways, Remix provides opiniated way of doing React, starting from the router, data fetching, mutations, error handling and many more. Let's dive in.
 
-Currently, two official plugins are available:
+## Dev Logs
+- I have been using Nextjs's app-router (file-based routing) for months. Hence creating routes using the SPA way felt so awkward 😂. In my opinion, file-based routing was more intuitive because it mimics how humans organize folders. It is more straight-forward (But Nextjs's parallel route was ...Let's not talk about that). So in Remix, `createBrowserRouter` will be the source of truth on where each route will point to. So when comparing Nextjs and Remix, it's either you want to read your router on your project explorer, or read it in the form of codes. I think both are fine, as long as your routes are not jumbled up everywhere. But glad that the "root layout" pattern works the same as app-router. I remember back in the days before the layout pattern exist, we created bunch of HOC for different layouts, conditinally render it based on different situations and caching the layout so that it doesn't re-render when the child changes.
+> Update: I've completed the tutorial, and doing routes using the SPA way doesn't feel that bad. Just need to rewire your brain and everything will click together.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Remix introduces new pattern which are the loader and actions. The first time I learnt web development, I was introduced to form's attribute `(action, method="POST/GET")`, `button type="submit"`, etc. Was fascinated of all these new jargons. Now in Remix I was re-introduced with this web standards, I'm feeling like a beginner again LOL. It's a moment to unlearn and re-learn.
+
+- Okay... when the tutorial asks to create a "destroy" route (`contact/:contactId/destroy`) that will execute destroy action, it reminded me a lot of Laravel. Seems like Remix also took inspiration from other frameworks. Cool. This helps experienced people to fimiliarize with the framework.
+
+- The tutorial also teaches [optimistic UI](https://reactrouter.com/en/main/start/tutorial#optimistic-ui). I thought this concept was trivial, but when I experienced it first hand, I realized it actually provides a nice UX. 
+
+- Overall the tutorial was very well written. Remix's pattern seems like it is leveraging the basic web standards (GET/POST method) and sprinkle some abstraction (loader/action) without introducing too much magic. There's also explaination on how some of the Remix concept works under the hood if done without Remix. This shows that [Ryan Florence](https://github.com/ryanflorence) is someone who really understands the web. Hopefully I can also write good article like this in the future.
+
+## Reference
+[React Router Tutorial](https://reactrouter.com/en/main/start/tutorial)
